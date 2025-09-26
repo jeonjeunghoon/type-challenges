@@ -29,7 +29,9 @@
 
 /* _____________ 여기에 코드 입력 _____________ */
 
-type MyPick<T, K> = any
+type MyPick<Type, Key extends keyof Type> = {
+  [key in Key]: Type[key]
+}
 
 /* _____________ 테스트 케이스 _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
